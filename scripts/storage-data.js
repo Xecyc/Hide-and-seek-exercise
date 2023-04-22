@@ -29,15 +29,4 @@ window.onload = function () {
   }
 }
 
-function data () {
-  const parseData = JSON.parse(localStorage.getItem('formData'));
-  if (parseData !== 'undefined' || parseData !== 'null') {
-    document.getElementById('name').value = parseData.storedName;
-    document.getElementById('email').value = parseData.storedEmail;
-    document.getElementById('msg').value = parseData.storedEmail;
-  }
-}
-
-data()
-
-// There's an issue in this code, the data saves, but you cannot retrieve it. 
+// There's a bug in this code, it cannot retrieve data from the storage.
