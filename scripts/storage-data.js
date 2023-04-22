@@ -18,7 +18,8 @@ window.onload = function () {
     });
   }
 };
-function getData() {
+
+window.onload = function () {
   // Retrieve the form data
   const parseData = JSON.parse(localStorage.getItem('formData'));
   if (parseData !== 'undefined' || parseData !== 'null') {
@@ -27,4 +28,5 @@ function getData() {
     document.getElementById('msg').value = parseData.storedEmail;
   }
 }
-getData();
+
+// There's an issue in this code, the data saves, but you cannot retrieve it. 
