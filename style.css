@@ -1,0 +1,921 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%; /*** This was done to use rem instead of px, 1 rem = 10px */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  min-width: 100%;
+}
+
+.navbar {
+  background-color: #3c3a39;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 4.8rem;
+}
+
+.hide {
+  display: none;
+}
+
+.ham-icon {
+  margin: 2rem;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  height: 2.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.nav-item a {
+  font-family: "Inter", sans-serif;
+  font-size: 1.7rem;
+  line-height: 2rem;
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+}
+
+.mail-icon {
+  height: 2.4rem;
+}
+
+.brand-name {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  font-weight: 700;
+  margin: 0.5rem;
+  padding: 1rem 1.2rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+/********* Hamburger menu and on-Click action *********/
+
+/** Hamburger icon and animations **/
+
+@media (max-width: 768px) {
+  .bar {
+    height: 0.2rem;
+    background: #fff;
+    margin: 0.3rem 0;
+    transform-origin: left;
+    transition: all 0.3s;
+  }
+
+  .ham-icon.active .bar:nth-child(1) {
+    transform: rotate(45deg);
+  }
+
+  .ham-icon.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .ham-icon.active .bar:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
+  /** hamburger menu **/
+
+  .nav-menu {
+    display: none;
+  }
+
+  .nav-menu-hide.active {
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    bottom: 0.0001rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-top: 12rem;
+    background-color: #3c3a39;
+    padding-left: 1.5rem;
+    transition: 0.3s;
+  }
+
+  .close-icon.active {
+    position: fixed;
+    right: 10%;
+    margin-top: 8%;
+    margin-right: -4.5%;
+  }
+
+  .nav-item a {
+    height: 5.6rem;
+    width: 32.7rem;
+    font-family: "Inter", sans-serif;
+    font-size: 3.2rem;
+    line-height: 4.4rem;
+    text-align: center;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .nav-link::after {
+    display: block;
+    content: "";
+    width: 90%;
+    height: 1px;
+    background: #fff;
+    position: absolute;
+  }
+}
+
+/**********************   */
+
+/*** Main - Headline ***/
+
+.headline {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.2rem;
+  padding-top: 12rem;
+  padding-left: 2.4rem;
+  min-height: 59rem;
+  min-width: 100%;
+  background-color: #1c1a19;
+  background-image: url("./img/background/illustration-header-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: bottom -23% right;
+  overflow: hidden;
+}
+
+.headline h1 {
+  max-width: 32.7rem;
+  min-height: 12.4rem;
+  font-family: "Crete Round", sans-serif;
+  color: #ff6b00;
+  font-weight: 400;
+  font-size: 5.6rem;
+  line-height: 6.4rem;
+  letter-spacing: 0.037rem;
+}
+
+.headline h1 span h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  color: #fff5e1;
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.headline p {
+  max-width: 32.7rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.4rem;
+  color: #fff;
+}
+
+/* ------------------------ */
+
+/*** Main > Social Media Icons ***/
+
+.social-media ul {
+  display: flex;
+}
+
+.icon-box {
+  display: flex;
+  padding: 0.8rem;
+}
+
+.media-img {
+  display: block;
+}
+
+footer .media-img {
+  filter:
+    brightness(0) saturate(100%) invert(35%) sepia(11%) saturate(1273%)
+    hue-rotate(180deg) brightness(96%) contrast(85%);
+}
+
+.media-img:hover {
+  cursor: pointer;
+  filter:
+    invert(49%) sepia(77%) saturate(5619%) hue-rotate(8deg)
+    brightness(96%) contrast(97%);
+}
+
+/*** Main - Works section ***/
+
+.works-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 3rem;
+  min-width: 32.7rem;
+  min-height: 8.3rem;
+  margin-top: 12rem;
+}
+
+.works-container h1 {
+  font-family: "Crete Round", sans-serif;
+  font-size: 4rem;
+  line-height: 5.2rem;
+  color: #1c1a19;
+  text-align: center;
+}
+
+.works-container .line {
+  justify-self: center;
+  width: 32.7rem;
+  border: 1px solid #212121;
+  margin-bottom: 2rem;
+  margin-top: 0.5rem;
+}
+
+.img-placeholder {
+  display: block;
+  justify-self: center;
+}
+
+.works-stories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.works-stories h1 {
+  color: #091e42;
+  font-size: 3.2rem;
+  line-height: 4.4rem;
+  margin-top: 1rem;
+}
+
+.works-stories p {
+  font-family: "Inter", sans-serif;
+  color: #091e42;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  max-width: 32.7rem;
+}
+
+.languages-box {
+  font-family: "Inter", sans-serif;
+}
+
+.languages-list {
+  display: grid;
+  grid-template-columns: 5.2rem 6.4rem 9.5rem 6.1rem;
+  grid-template-rows: 4rem 4rem;
+  gap: 1.2rem 1.2rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  min-width: 32.7rem;
+  min-height: 9rem;
+}
+
+.languages-list li {
+  border: 0.1rem solid #8993a4;
+  padding: 1rem 1.2rem;
+  border-color: #091e42;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-area {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff6b00;
+}
+
+.languages-list .btn-area {
+  border: none;
+  grid-area: 2 / span 2;
+}
+
+.btn {
+  font-weight: 700;
+  font-size: 1.7rem;
+  line-height: 2.4rem;
+  min-width: 10rem;
+  min-height: 2.4rem;
+  color: #fff;
+  background-color: #ff6b00;
+  text-decoration: none;
+}
+
+.btn-area:hover {
+  cursor: pointer;
+}
+
+/*** Other Projects ***/
+
+.project-box {
+  display: flex;
+  justify-content: center;
+  min-height: 38.6rem;
+  min-width: 32.7rem;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url(./img/background/projects-background.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-width: 32.7rem;
+}
+
+.project-text {
+  padding-top: 9rem;
+  padding-left: 1rem;
+}
+
+.project-content h1 {
+  font-family: "Crete Round", sans-serif;
+  font-weight: 400;
+  font-size: 3.2rem;
+  line-height: 4.4rem;
+  color: #fff;
+  text-align: left;
+}
+
+.project-content p {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: #fff;
+  max-width: 29.5rem;
+  padding-bottom: 1rem;
+}
+
+.project-content ul {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.list-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.24);
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  padding: 1rem;
+}
+
+.project-box .large-btn-area {
+  padding: 1rem;
+  text-align: center;
+  background-color: #ff6b00;
+  font-weight: 700;
+  font-size: 1.7rem;
+  line-height: 2.4rem;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.03rem;
+}
+
+/** About Me Page **/
+
+.about_me {
+  min-width: 37.5rem;
+  min-height: 175.1rem;
+  background-color: #1c1a19;
+  display: flex;
+  flex-direction: column;
+  margin-top: 12rem;
+}
+
+.about_me-container {
+  min-width: 37.5rem;
+  min-height: 55rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  row-gap: 1.5rem;
+  background-image: url("./img/background/illustration-about-me-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top 76% right;
+  margin-top: 12rem;
+}
+
+.about_me-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about_me-text h1 {
+  font-family: "Crete Round", sans-serif;
+  font-size: 7.2rem;
+  line-height: 8.8rem;
+  letter-spacing: 0.037rem;
+  font-weight: 400;
+  color: #ff6b00;
+  width: 32.7rem;
+  height: 7.9rem;
+}
+
+.about_me-text p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 400;
+  color: #f4f5f7;
+  min-width: 32.7rem;
+}
+
+.about_me-text .btn {
+  justify-self: flex-end;
+  min-width: 16rem;
+  min-height: 4.8rem;
+  margin-top: 0.5rem;
+  font-family: "Inter", sans-serif;
+}
+
+.about_me hr {
+  width: 80%;
+  border: 0.1rem solid #fff;
+  position: relative;
+  top: 28rem;
+}
+
+/** Skills Section **/
+
+.skills-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12rem 2.4rem 3.8rem;
+  gap: 2.4rem;
+  font-family: "Inter", sans-serif;
+  color: #fff;
+}
+
+.skills-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-width: 16.4rem;
+  min-height: 2.4rem;
+  font-size: 3.2rem;
+  line-height: 4.4rem;
+}
+
+.skills-section ul {
+  text-align: center;
+  font-size: 2.2rem;
+  line-height: 4.3rem;
+  padding: 2.4rem;
+}
+
+/** Contact Form and Footer social media **/
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5.8rem;
+  max-width: 37.5rem;
+  height: 93rem;
+  font-family: "Inter", sans-serif;
+  padding: 12rem 2.4rem;
+  text-align: center;
+}
+
+.contact-section p {
+  font-weight: 700;
+  font-size: 3.2rem;
+  line-height: 4.4rem;
+  color: #172b4d;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  padding-top: 6rem;
+}
+
+.name-box,
+.mail-box,
+.msg-box {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2.4rem;
+  width: 100%;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #dbd8d7;
+  outline: none;
+}
+
+.msg-box {
+  font-style: italic;
+  background-color: #fbf8f7;
+  border-style: none;
+}
+
+.msg-box::placeholder {
+  /* use ::placeholder pseudo-element to change the placeholder text color */
+  color: #3c3a39;
+}
+
+.btn-submit {
+  align-self: center;
+  max-width: 13.1rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  border-top: 2px solid #dfe1e6;
+  align-items: center;
+}
+
+/** Button actions **/
+
+.btn-action:hover {
+  cursor: pointer;
+  background-color: #fff5e1;
+  border: 0.1rem solid #f55800;
+  color: #f55800;
+}
+
+.btn-action:disabled {
+  background-color: #f4f1f0;
+  color: #5b5957;
+}
+
+.btn-action:active {
+  background-color: #e05304;
+  color: #f4f1f0;
+}
+
+/** Animations **/
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/** error message **/
+
+.error {
+  min-width: 35rem;
+  color: red;
+  font-size: 1.2rem;
+}
+
+/** Media Query - Desktop **/
+
+@media only screen and (min-width: 768px) {
+  .navbar,
+  .headline,
+  .about_me {
+    min-width: 100vw;
+  }
+
+  /** NAVBAR **/
+
+  .navbar {
+    padding-right: 12rem;
+  }
+
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+
+  .hide {
+    display: block;
+  }
+
+  .nav-item a {
+    visibility: visible;
+  }
+
+  .ham-icon {
+    display: none;
+  }
+
+  .brand-name {
+    font-size: 2rem;
+    line-height: 2rem;
+    padding-left: 8%;
+    animation: slideInLeft 2s 0.3s;
+  }
+
+  /** Headline **/
+
+  .headline {
+    flex-direction: row;
+    align-items: center;
+    background-image: url("./img/background/Illustration-header-desktop.svg");
+    background-size: contain;
+    background-position: bottom -10rem right;
+    min-height: 59rem;
+    padding: 0;
+    padding-left: 4rem;
+  }
+
+  .about_me ul {
+    text-align: left;
+  }
+
+  .headline-text {
+    min-width: 40%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 19.2rem 0 19.2rem 0;
+    gap: 2.2rem;
+    order: 1;
+  }
+
+  .head-h1 {
+    font-size: 7.2rem;
+    line-height: 8.2rem;
+  }
+
+  .head-h1 span h2 {
+    font-size: 3.2rem;
+    line-height: 4.4rem;
+  }
+
+  .head-p {
+    min-width: 80%;
+    font-size: 2rem;
+    line-height: 3.2rem;
+  }
+
+  /** Social Media **/
+
+  .social-media {
+    margin-left: 2.5rem;
+    padding-right: 5rem;
+  }
+
+  .headline .social-media ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .media-img {
+    height: 2.4rem;
+  }
+
+  /** Works **/
+
+  .works-container {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+      "header header header"
+      "left middle right";
+  }
+
+  .works-header-container {
+    min-width: 100%;
+  }
+
+  .header-area {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 5rem;
+  }
+
+  .works-header {
+    display: flex;
+    align-items: center;
+    margin-left: 1.5rem;
+    margin-top: 10rem;
+    margin-bottom: 12rem;
+  }
+
+  .works-header h1 {
+    min-width: 31.5rem;
+    font-size: 4rem;
+    line-height: 5.2rem;
+    color: #091e42;
+    margin-right: 1.5rem;
+  }
+
+  .works-container .line {
+    height: 0;
+    min-width: 69%;
+    border: 1px solid #212121;
+    margin-bottom: 0;
+  }
+
+  .works-header-multipost {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .img-placeholder {
+    max-width: 56rem;
+    flex-basis: 70%;
+    margin-left: 1rem;
+  }
+
+  .works-stories {
+    flex-basis: 30%;
+  }
+
+  .left {
+    grid-area: left;
+  }
+
+  .middle {
+    grid-area: middle;
+  }
+
+  .right {
+    grid-area: right;
+  }
+
+  /** About Me **/
+
+  .about_me {
+    min-height: 60vw;
+  }
+
+  .about_me-text {
+    display: flex;
+    align-items: flex-start;
+    width: 50%;
+    gap: 1.5rem;
+  }
+
+  .about_me-text p {
+    font-size: 2rem;
+    line-height: 3.2rem;
+  }
+
+  .about_me-text h1 {
+    font-size: 7.2rem;
+    line-height: 8.15rem;
+  }
+
+  .about_me-container {
+    background-image: url("./img/background/illustration-about\ me-desktop.svg");
+    background-position: top 20% right;
+    background-size: 40%;
+    min-width: 100%;
+    min-height: 85vh;
+    align-items: flex-start;
+    padding: 13rem 0;
+    padding-left: 13rem;
+    padding-right: 13rem;
+  }
+
+  .about_me hr {
+    top: 24rem;
+    min-width: 100%;
+    border: 0.1rem solid #fff;
+    margin: 0 2rem 13rem 2rem;
+  }
+
+  .skills-section {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 14%;
+    max-height: 56rem;
+  }
+
+  .skills-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 59.6rem;
+    padding-top: 10rem;
+  }
+
+  /** contact-form **/
+
+  .contact-section {
+    min-width: 100%;
+    max-height: 72rem;
+  }
+
+  .contact-form-container {
+    display: flex;
+    align-items: flex-start;
+    min-width: 113rem;
+    gap: 10.4rem;
+    padding-right: 39rem;
+  }
+
+  .contact-form-container p {
+    font-size: 4rem;
+    line-height: 5.2rem;
+    max-width: 52.5rem;
+    min-height: 25.6rem;
+    color: #262626;
+    display: flex;
+    align-items: center;
+    text-align: left;
+  }
+
+  .contact-form {
+    max-width: 68.4rem;
+    min-height: 33rem;
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  .btn-submit {
+    min-width: 9.8rem;
+    align-self: flex-start;
+    font-size: 1.7rem;
+    line-height: 2.4rem;
+  }
+
+  footer {
+    display: flex;
+    width: 100%;
+    max-height: 7.2rem;
+    margin-top: 6rem;
+    flex-direction: column;
+    border-top: 2px solid #dfe1e6;
+    align-items: center;
+  }
+
+  footer .social-media {
+    max-height: 7.2rem;
+    padding-top: 5.5rem;
+  }
+
+  footer .media-img {
+    height: 2.4rem;
+  }
+
+  /** Button actions **/
+
+  .project-box .large-btn-area {
+    display: none;
+  }
+
+  .project-box:hover .large-btn-area {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .headline {
+    background-size: contain;
+    background-position: bottom 5rem right;
+  }
+}
